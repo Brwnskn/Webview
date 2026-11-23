@@ -1,0 +1,8 @@
+{
+  "name": "Remix WebViewDiagnosticsApp",
+  "description": "Standalone Android developer diagnostics and performance telemetry utility for inspecting real-time WebView runtime state, DOM/Canvas rendering loops, coordinate state deltas, entity projection, intercepted asset requests, and JSON telemetry exports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

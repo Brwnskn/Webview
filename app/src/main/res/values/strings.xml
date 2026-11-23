@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">WebViewDiagnosticsApp</string>
+    <string name="url_input_hint">Enter target URL (https://...)</string>
+    <string name="action_load">Go</string>
+    <string name="action_reload">Reload</string>
+    <string name="action_desktop_ua">Desktop UA</string>
+    <string name="action_mobile_ua">Mobile UA</string>
+
+    <!-- Guided Wizard Titles, Buttons, and Plain-English Instructions -->
+    <string name="wizard_step_1_title">Step 1 — Find Game Engine</string>
+    <string name="step_1_inspect_scope">1. Scan Custom Globals</string>
+    <string name="wizard_step_1_instruction">Load the web app and log in until your character is visible on screen, then tap \'1. Scan Custom Globals\'. Auto-detected engine roots and batched custom globals stream live into Staging.</string>
+    <string name="step_1_manual_query_title">Manual Property Inspector</string>
+    <string name="step_1_manual_query_hint">e.g. game.player or window.AppInstance</string>
+    <string name="action_query_path">Query Path</string>
+    <string name="cd_query_path">Inspect property path and stage it</string>
+
+    <string name="wizard_step_2_title">Step 2 — Lock On to Live Player Coordinates</string>
+    <string name="step_2a_capture_baseline">2A. Capture Standing Baseline</string>
+    <string name="wizard_step_2a_instruction">Stand completely still in-game and tap \'2A. Capture Standing Baseline\'.</string>
+    <string name="step_2b_compute_delta">2B. Isolate Player Coords</string>
+    <string name="wizard_step_2b_instruction">Walk your character 5–10 steps in any direction, stop, and tap \'2B. Isolate Player Coords\' to start 200ms live reference polling.</string>
+
+    <string name="wizard_step_3_title">Step 3 — Visual Entity Inspection</string>
+    <string name="step_3_scan_entities">3. Scan Nearby Entities</string>
+    <string name="wizard_step_3_instruction">Make sure 2+ monsters or entities are visible on your screen, then tap \'3. Scan Nearby Entities\' (anchored to Step 2B\'s player parent container).</string>
+
+    <string name="wizard_step_4_title">Step 4 — Export Handoff Report</string>
+    <string name="step_4_export_report">4. Export Report (.json)</string>
+    <string name="wizard_step_4_instruction">Once Steps 2B and 3 show [CAPTURED ✓] (and any candidates are pinned in Staging), tap \'4. Export Report (.json)\' to save to Downloads.</string>
+
+    <string name="action_share_report">Share JSON</string>
+    <string name="action_js_drawer">JS Console</string>
+    <string name="action_execute_script">Execute Script</string>
+    <string name="js_input_hint">Enter JS expression or query path…</string>
+    <string name="tab_wizard">Wizard</string>
+    <string name="tab_staging">Staging</string>
+    <string name="tab_entities">Entities</string>
+    <string name="tab_assets">Assets</string>
+    <string name="tab_logs">Logs</string>
+    <string name="console_title">TELEMETRY CONSOLE</string>
+    <string name="scan_status_idle">Idle</string>
+    <string name="scan_status_running">Scanning…</string>
+    <string name="scan_status_paused">Paused</string>
+    <string name="scan_status_completed">Completed</string>
+    <string name="scan_status_error">Error</string>
+    <string name="action_pause_scan">Pause</string>
+    <string name="action_resume_scan">Resume</string>
+    <string name="staging_search_hint">Search staged paths (e.g. pos, coord, player, actor)…</string>
+    <string name="action_export_log_dump_txt">Export Full Log Dump (.txt)</string>
+    <string name="action_export_log_dump_json">.json</string>
+    <string name="action_share_log_dump">Share</string>
+    <string name="console_empty_title">Diagnostic Engine Armed</string>
+    <string name="console_empty_subtitle">Follow Steps 1 → 4 in the Wizard tab to accumulate candidates, lock live 200ms player coordinates, inspect entities, and export JSON.</string>
+    <string name="staging_empty_title">Candidate Staging Buffer Empty</string>
+    <string name="staging_empty_subtitle">Run Step 1 or Step 2 multiple times (standing, moving, interacting) to accumulate candidate paths here and pin items of interest.</string>
+    <string name="entities_empty_title">No Entities Inspected Yet</string>
+    <string name="entities_empty_subtitle">Complete Step 2B to lock onto your player coordinates, then tap \'3. Scan Nearby Entities\' to inspect world coordinates and 2D screen projections here.</string>
+    <string name="assets_empty_title">No Binary Assets Intercepted Yet</string>
+    <string name="assets_empty_subtitle">Load a web application to passively capture .wasm, .bin, and .json requests into private app storage and inspect ByteBuffer headers, sections, and entropy here.</string>
+    <string name="action_clear_asset_cache">Clear Cache</string>
+    <string name="cd_clear_asset_cache">Clear locally cached binary assets</string>
+    <string name="cd_reload_page">Reload current page</string>
+    <string name="cd_toggle_desktop_ua">Toggle desktop user agent mode</string>
+    <string name="cd_toggle_js_drawer">Toggle manual JavaScript execution drawer</string>
+    <string name="cd_clear_logs">Clear telemetry logs</string>
+    <string name="cd_toggle_split">Toggle console split height</string>
+    <string name="cd_copy_log">Copy log payload</string>
+    <string name="cd_share_report">Share exported JSON report</string>
+    <string name="cd_close_drawer">Close JavaScript drawer</string>
+    <string name="cd_pin_candidate">Pin or unpin candidate</string>
+    <string name="cd_track_candidate">Lock candidate for live 200ms tracking</string>
+    <string name="cd_clear_search">Clear search query</string>
+    <string name="cd_share_log_dump">Share exported full log dump</string>
+    <string name="toast_report_saved">Diagnostic report saved to Downloads: %1$s</string>
+    <string name="toast_log_dump_saved">Full log dump saved to Downloads: %1$s</string>
+    <string name="toast_wasm_map_saved">WASM memory map saved to Downloads: %1$s</string>
+    <string name="toast_report_failed">Failed to export report: %1$s</string>
+    <string name="toast_log_copied">Copied to clipboard</string>
+    <string name="share_report_chooser_title">Share Diagnostic Telemetry File</string>
+
+    <!-- WASM Heap Value-Tracker -->
+    <string name="tab_wasm_heap">WASM Heap</string>
+    <string name="wasm_tracker_title">WASM Heap Value-Tracker (HP / Stat Scanner)</string>
+    <string name="wasm_value_input_hint">Enter exact stat / HP value (e.g. 4338)</string>
+    <string name="wasm_action_scan_heap">1. Scan HEAP32 / F32</string>
+    <string name="wasm_action_filter_delta">2. Filter Changed Value</string>
+    <string name="wasm_action_reset">Reset</string>
+    <string name="wasm_action_stop_poll">Stop Poll</string>
+    <string name="wasm_action_export_map">Export Memory Map (.json)</string>
+    <string name="wasm_filter_instruction">Take damage or heal in-game so your HP changes, enter your new HP value, and tap filter.</string>
+    <string name="wasm_neighbors_title">Neighboring Memory Inspector (±4 to ±16 Bytes)</string>
+    <string name="wasm_neighbors_hint">Walk or move in-game — adjacent floats that highlight in green reveal live player coordinates.</string>
+    <string name="cd_export_wasm_map">Export isolated WASM memory map as JSON</string>
+
+    <!-- WASM Float Heap Delta Scanner (Step 2A/2B Float Mode) -->
+    <string name="step2_mode_wasm_float">WASM Float Heap</string>
+    <string name="step2_mode_js">JS Objects</string>
+    <string name="step_2a_float_baseline">2A. Capture Float Baseline</string>
+    <string name="step_2b_scan_float_deltas">Scan Float Heap Deltas</string>
+    <string name="wizard_step_2_float_instruction">Stand still, tap Baseline, walk 5 steps forward in-game, then tap Scan Float Deltas.</string>
+    <string name="wasm_float_watcher_title">Live Float Watcher (HEAPF32)</string>
+    <string name="wasm_float_pin_top">Pin X/Y/Z</string>
+    <string name="wasm_float_stop_watch">Stop</string>
+    <string name="cd_pin_float_candidate">Pin float offset to Staging</string>
+    <string name="cd_inspect_float_neighbors">Inspect ±16B neighbors around this float</string>
+
+    <!-- Locked Float Coords & Persistent Pointer Scanner -->
+    <string name="action_lock_coords">Lock Coords</string>
+    <string name="action_unlock_coords">Unlock</string>
+    <string name="action_find_pointers">Find Pointers</string>
+    <string name="action_verify_pointers">Verify</string>
+    <string name="action_watch_pointers_live">Watch Live</string>
+    <string name="action_stop_watch_pointers">Stop Watch</string>
+    <string name="action_prune_pointers">Prune 0/Stale</string>
+    <string name="action_stream_pointer_hud">Stream to HUD</string>
+    <string name="action_live_entities_on">Live 500ms</string>
+    <string name="action_live_entities_off">Stop Live</string>
+    <string name="wasm_locked_coords_title">Locked WASM Coordinates (HEAPF32)</string>
+    <string name="wasm_pointer_chains_title">Persistent Pointer Chains (HEAPU32)</string>
+    <string name="wasm_pointer_chains_hint">Watch Live polls every 200ms — walk in-game to confirm MOVING ✓ vs ZERO/STALE. Bookmark chains to save per site and auto-verify on reload.</string>
+    <string name="wasm_step3_instruction">Anchored to your live WASM pointer/locked player coords (or JS object path) — scans read-only HEAPF32 memory for nearby entity coordinates.</string>
+    <string name="cd_lock_float_candidate">Lock this float offset as player coordinates</string>
+    <string name="cd_pin_pointer_chain">Bookmark pointer chain locally for this site</string>
+    <string name="cd_stream_pointer_hud">Stream this pointer chain live to the top coordinates HUD</string>
+    <string name="cd_toggle_wasm_entities_live">Toggle 500ms live position refresh for WASM nearby entities</string>
+
+    <!-- WASM Entity Struct Field Prober (Player & Mob HP / MP / FP + Mob Names) -->
+    <string name="struct_prober_title">Entity Struct Prober (HP / MP / FP / Names)</string>
+    <string name="struct_prober_hint_stat">Type your current in-game stat value and tap Probe Struct. If multiple offsets match, change the stat in-game and tap Refine — then Bind to apply to HUD &amp; all mobs.</string>
+    <string name="struct_prober_hint_name">Tap Auto-Probe to list inline UTF-8, char*, and std::string fields on your player &amp; nearby mobs, or type a player/mob name to pinpoint the exact Name offset.</string>
+    <string name="struct_prober_stat_placeholder">Current value (e.g. 4338)</string>
+    <string name="struct_prober_name_placeholder">Player or mob name (optional)</string>
+    <string name="action_probe_struct">Probe Struct</string>
+    <string name="action_refine_struct">Refine</string>
+    <string name="action_auto_probe_names">Auto-Probe</string>
+    <string name="action_search_names">Search</string>
+    <string name="action_bind_offset">Bind</string>
+    <string name="action_clear_schema">Clear All</string>
+    <string name="cd_toggle_struct_prober">Expand or collapse entity struct field prober</string>
+    <string name="cd_clear_bound_field">Clear this bound struct offset</string>
+
+    <!-- 4-Tab Overhaul, Draggable Split View & Saved Sites Startup Card -->
+    <string name="tab_coords">Coords</string>
+    <string name="tab_prober">Prober</string>
+    <string name="tab_logs_assets">Logs</string>
+    <string name="subtab_struct_prober">Struct Prober</string>
+    <string name="subtab_full_heap">Full-Heap Tracker</string>
+    <string name="split_snap_mini">Mini</string>
+    <string name="split_snap_half">Split</string>
+    <string name="split_snap_full">Full</string>
+    <string name="cd_drag_split_handle">Drag to resize website and diagnostic tools</string>
+    <string name="saved_sites_title">Saved Sites &amp; Pointers</string>
+    <string name="saved_sites_subtitle">Persisted locally on disk — tap Open to load &amp; auto-verify.</string>
+    <string name="action_open_and_verify">Open &amp; Verify</string>
+    <string name="cd_delete_saved_site">Delete saved pointers for this site</string>
+    <string name="action_probe_hp_names_shortcut">Probe HP/Names</string>
+    <string name="advanced_legacy_tools_title">Advanced Scope, Manual Path &amp; Export</string>
+    <string name="prober_no_anchor_banner">No active WASM player pointer yet. Lock coordinates or verify a saved pointer in the Coords tab first.</string>
+    <string name="action_go_to_coords">Go to Coords</string>
+
+    <!-- Selected Target Finder, Aggro Status Prober & Read-Only Entity Location Verification -->
+    <string name="subtab_target_finder">Target</string>
+    <string name="subtab_struct_short">Struct</string>
+    <string name="subtab_heap_short">Heap</string>
+    <string name="target_finder_title">Selected Target Pointer Finder (Read-Only)</string>
+    <string name="target_finder_instructions">1) Select Mob A in-game and tap Scan Mob A. 2) Select Mob B (Diff Mob), deselect (Deselected 0), or stay on the same mob (Same Mob) to isolate the exact target pointer slot.</string>
+    <string name="action_target_capture_a">1. Scan Mob A</string>
+    <string name="action_target_diff_mob">Diff Mob</string>
+    <string name="action_target_deselected">Deselected (0)</string>
+    <string name="action_target_same_mob">Same Mob</string>
+    <string name="action_target_same_type">Same-Type Mob</string>
+    <string name="action_assign_target_to_entities">Assign Target to Entity List</string>
+    <string name="action_open_target_finder">Target Finder</string>
+    <string name="struct_prober_hint_aggro">With a mob selected &amp; locked in Target Finder: tap Passive while it is idle, then aggro it in-game and tap Aggroed (Refine) to isolate the exact Aggro flag or Player-Target pointer.</string>
+    <string name="action_probe_passive">Passive (0)</string>
+    <string name="action_probe_aggroed">Aggroed (!=0)</string>
+    <string name="entity_location_tracker_badge">READ-ONLY LOCATION TRACKER</string>
+    <string name="entity_location_tracker_note">Walk manually in-game toward the heading below — distance drops to 0.0u to verify this entity\'s exact location (no auto-target or auto-move).</string>
+</resources>
+
+
